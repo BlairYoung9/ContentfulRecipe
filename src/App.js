@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import { client } from './client';
+import { getRecipes } from './client';
 
 function App() {
 
   const [recipes, setRecipes] =  useState([]);
-  const {getRecipes} = client();
 
+  useEffect(() => {
+    getRecipes().then((res) => console.log(res))
+  });
+  
 
   return (
     <div className="App">
