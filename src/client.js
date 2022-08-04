@@ -1,23 +1,27 @@
 import {createClient} from "contentful";
 
+
 export const client = () => {
-    createClient({
+    console.log(process.env)
+    let whatever = createClient({
         space: process.env.REACT_APP_SPACE_ID ,
         accessToken: process.env.REACT_APP_ACCESS_TOKEN,
         host: "preview.contentful.com"
     });
+    return whatever;
 };
 
-const getRecipes = async () => {
+export const getRecipes = async () => {
     try{
-        await client.getEntries({
+        const entries = await client().getEntries({
             content_type: "recipe",
             select: "fields"
         });
         return entries;
     } catch(error){
         console.log(`error fetch: ${error}`);
+        return;
     }
-
-    return {getRecipes};
+    
+    //return {getRecipes}
 }
