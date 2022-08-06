@@ -2,7 +2,7 @@ import {createClient} from "contentful";
 
 
 export const client = () => {
-    console.log(process.env)
+    //console.log(process.env)
     let whatever = createClient({
         space: process.env.REACT_APP_SPACE_ID ,
         accessToken: process.env.REACT_APP_ACCESS_TOKEN,
