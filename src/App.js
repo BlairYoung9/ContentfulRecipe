@@ -17,7 +17,6 @@ function App() {
       <div className="container">
         <header>
           <div className="wrapper">
-            <span>Recipe Book</span>
           </div>
         </header>
         <main>

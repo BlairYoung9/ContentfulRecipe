@@ -1,6 +1,12 @@
 import React, {useState, useEffect, useCallback} from 'react'
 import { client } from '../../client'
 import CarouselSlide from './carouselSlide'
+import {Swiper, SwiperSlide} from 'swiper/react'
+import SwiperCore, {Navigation} from 'swiper'
+import 'swiper/scss'
+import 'swiper/scss/navigation'
+ 
+SwiperCore.use([Navigation])
 
 const Carousel = () => {
 
@@ -42,18 +48,23 @@ const Carousel = () => {
         getCarouselSlides()
     },[getCarouselSlides])
 
-    console.log(carouselSlides)
+    if(!Array.isArray(carouselSlides) || !carouselSlides.length){
+        return null
+    }
 
     return (
-        <div>
+        <div className="carousel">
+            <Swiper navigation className ="swiper-container">
             {carouselSlides.map((item) => {
                 const {id, slideBg, slideTitle, slideDescription} = item
                 return(
-                <CarouselSlide key = {id} slideTitle = {slideTitle} slideDescription = {slideDescription} slideBg = {slideBg} />
-                )
-                    
+                    <SwiperSlide key = {id}>
+                        <CarouselSlide  slideTitle = {slideTitle} slideDescription = {slideDescription} slideBg = {slideBg} /> 
+                    </SwiperSlide>
+                    )
                 
             })}
+            </Swiper>
         </div>
     )
 }
