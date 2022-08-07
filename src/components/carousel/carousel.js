@@ -6,7 +6,7 @@ const Carousel = () => {
     const [isCarouselLoading, setIsCarouselLoading] = useState(false)
     const [carouselSlides, setCarouselSlides] = useState([])
 
-    const cleanUpCarouselSlides = (rawData) => {
+    const cleanUpCarouselSlides = useCallback((rawData) => {
         const cleanSlides = rawData.map((slide) => {
             const {sys,fields} = slide;
             const {id} = sys;
@@ -17,18 +17,23 @@ const Carousel = () => {
             return updatedSlide;
         })
         setCarouselSlides(cleanSlides)
-    }
+    }, [])
 
     const getCarouselSlides =  useCallback(async () => {
         try {
             const res = await client().getEntries({content_type: 'kitchenCarousel'})
             const resData = res.items
             console.log(resData)
-            console.log(res)
+
+            if(resData){
+                cleanUpCarouselSlides(resData)
+            }else{
+                setCarouselSlides([])
+            }
         }catch(err){
             console.log(err)
         }
-    }, [])
+    }, [cleanUpCarouselSlides])
 
     useEffect(() => {
         getCarouselSlides()
