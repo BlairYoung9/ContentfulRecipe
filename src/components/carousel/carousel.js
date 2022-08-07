@@ -13,8 +13,10 @@ const Carousel = () => {
             const slideTitle = fields.slide;
             const slideDescription = fields.description;
             const slideBg = fields.image.fields.file.url;
-            const updatedSlide = {id, slideTitle, slideDescription,. slideBg}
+            const updatedSlide = {id, slideTitle, slideDescription, slideBg}
+            return updatedSlide;
         })
+        setCarouselSlides(cleanSlides)
     }
 
     const getCarouselSlides =  useCallback(async () => {
