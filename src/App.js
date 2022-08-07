@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import { getRecipes } from './client';
+import Carousel from './components/carousel/carousel'
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
           </div>
         </header>
         <main>
+          <Carousel/>
           <div className="wrapper">
           </div>
         </main>
