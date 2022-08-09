@@ -1,7 +1,7 @@
 import React from 'react'
 import { client } from '../../client'
 import { useEffect, useState, useCallback} from "react"
-import RecipeCard from './RecipeCard' 
+import RecipeCard from './recipeCard' 
 import {Swiper, SwiperSlide} from 'swiper/react'
 import SwiperCore, {Navigation} from 'swiper'
 import 'swiper/scss'

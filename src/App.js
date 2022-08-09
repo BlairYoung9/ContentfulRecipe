@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import styled from "styled-components";
-import Recipes from './components/recipes/Recipes';
-import Carousel from './components/carousel/Carousel'
+import Recipes from './components/recipes/recipes';
+import Carousel from './components/carousel/carousel'
 import { Link, Switch, Route, BrowserRouter } from "react-router-dom"
 
 
