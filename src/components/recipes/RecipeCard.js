@@ -7,7 +7,6 @@ const RecipeCard = (props) => {
             <div>
                 <h2>{recipeTitle}</h2>
                 <p>{recipeDescription}</p>
-                <a href='/recipes' className='btn'>Learn More</a>
             </div>
         </div>
     )
