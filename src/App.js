@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import styled from "styled-components";
 import Recipes from './components/recipes/Recipes';
 import { getRecipes } from './client';
 import Carousel from './components/carousel/Carousel'
 import { Link, Switch, Route, BrowserRouter } from "react-router-dom"
+
 
 function App() {
 
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
-    getRecipes().then((res) => console.log(res))
+    getRecipes().then((res) => res && setRecipes(res));
   });
 
 
@@ -22,18 +24,37 @@ function App() {
           </div>
         </header>
         <div className="wrapper">
-        </div> 
+        </div>
         <Switch>
-          <Route exact path = "/">
-            <Carousel/>
+          <Route exact path="/">
+            <Carousel />
           </Route>
-          <Route exact path = "/recipes">
+          <Route exact path="/recipes">
             <Recipes/>
-          </Route>  
-       </Switch>
+          </Route>
+        </Switch>
       </div>
     </div>
   );
 }
 
 export default App;
+
+const Wrapper = styled.div`
+  font-family: "Roboto";
+  margin: 40px;
+
+  display: grid;
+  row-gap: 20px;
+  justify-content: center;
+`;
+
+const TitleWrapper = styled.div`
+  * {
+    margin: 0;
+  }
+
+  display: grid;
+  row-gap: 10px;
+`;
+
