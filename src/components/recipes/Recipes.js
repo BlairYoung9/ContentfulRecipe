@@ -18,10 +18,10 @@ const cleanUpRecipes = useCallback((rawData) => {
         const {sys,fields} = recipe;
         const {id} = sys;
         const recipeName = fields.name;
-        const recipeDescription = fields.description;
+        const recipeDirections = fields.directions;
         const recipeIngredients = fields.ingredients;
-        const recipeBg = fields.image.fields.file.url;
-        const updatedRecipe = {id, recipeName, recipeDescription,recipeIngredients, recipeBg}
+        const recipeBg = fields.photo.fields.file.url;
+        const updatedRecipe = {id, recipeName, recipeDirections,recipeIngredients, recipeBg}
         console.log(updatedRecipe)
         return updatedRecipe;
     })
@@ -32,7 +32,7 @@ const getRecipes =  useCallback(async () => {
     try {
         const res = await client().getEntries({content_type: 'recipe'})
         const resData = res.items
-
+        console.log(resData)
         if(resData){
             cleanUpRecipes(resData)
         }else{
@@ -49,18 +49,22 @@ useEffect(() => {
     getRecipes()
 },[getRecipes])
 
+console.log("LEO IS A CUCK")
+
 return (
-    <div className = "carousel">
+    <div className = "carousel" >
         <Swiper navigation className =  "swiper-container">
         {recipes.map((item) => {
-            const {id, recipeBg, recipeName, recipeDescription} = item
+            
+            const {id, recipeBg, recipeName, recipeDirections, recipeIngredients} = item
             return(
-                <SwiperSlide key = {id}>
-                    <RecipeCard  recipeName = {recipeName} recipeDescription = {recipeDescription} recipeBg = {recipeBg} /> 
+                <SwiperSlide key = {id} >
+                    <RecipeCard  recipeName={recipeName} recipeDirections={recipeDirections} recipeBg={recipeBg} recipeIngredients={recipeIngredients} /> 
                 </SwiperSlide>
                 )
             
         })}
+
         </Swiper>
     </div>
 )

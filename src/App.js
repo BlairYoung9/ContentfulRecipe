@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import styled from "styled-components";
 import Recipes from './components/recipes/Recipes';
-import { getRecipes } from './client';
 import Carousel from './components/carousel/Carousel'
 import { Link, Switch, Route, BrowserRouter } from "react-router-dom"
 
@@ -10,10 +9,6 @@ import { Link, Switch, Route, BrowserRouter } from "react-router-dom"
 function App() {
 
   const [recipes, setRecipes] = useState([]);
-
-  useEffect(() => {
-    getRecipes().then((res) => res && setRecipes(res));
-  });
 
 
   return (
