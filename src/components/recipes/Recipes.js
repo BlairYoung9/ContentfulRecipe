@@ -19,8 +19,10 @@ const cleanUpRecipes = useCallback((rawData) => {
         const {id} = sys;
         const recipeName = fields.name;
         const recipeDescription = fields.description;
+        const recipeIngredients = fields.ingredients;
         const recipeBg = fields.image.fields.file.url;
-        const updatedRecipe = {id, recipeName, recipeDescription, recipeBg}
+        const updatedRecipe = {id, recipeName, recipeDescription,recipeIngredients, recipeBg}
+        console.log(updatedRecipe)
         return updatedRecipe;
     })
     setRecipes(cleanRecipes)
