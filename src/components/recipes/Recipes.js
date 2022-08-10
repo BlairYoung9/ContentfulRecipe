@@ -9,7 +9,7 @@ import 'swiper/scss/navigation'
 
 SwiperCore.use([Navigation])
 
-const Recipes = () => {
+const Recipes = () => { 
 
 const [recipes, setRecipes] = useState([])
 
