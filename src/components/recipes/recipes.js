@@ -49,8 +49,6 @@ useEffect(() => {
     getRecipes()
 },[getRecipes])
 
-console.log("LEO IS A CUCK")
-
 return (
     <div className = "carousel" >
         <Swiper navigation className =  "swiper-container">
