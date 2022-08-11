@@ -5,7 +5,7 @@ import {Swiper, SwiperSlide} from 'swiper/react'
 import SwiperCore, {Navigation} from 'swiper'
 import 'swiper/scss'
 import 'swiper/scss/navigation'
- 
+
 SwiperCore.use([Navigation])
 
 const Carousel = () => {
