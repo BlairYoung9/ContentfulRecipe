@@ -49,7 +49,7 @@ const Carousel = () => {
     },[getCarouselSlides])
 
     if(isCarouselLoading){
-        return <h2>Loading....</h2>
+        return <h2>Loading...</h2>
     }
 
     if(!Array.isArray(carouselSlides) || !carouselSlides.length){
