@@ -8,7 +8,7 @@ import { Link, Switch, Route, BrowserRouter } from "react-router-dom"
 
 function App() {
 
-  const [recipes, setRecipes] = useState([]);
+    const [recipes, setRecipes] = useState([]);
 
 
   return (
