@@ -12,7 +12,7 @@ function App() {
 
 
   return (
-    <div className="App">
+      <div className="App">
       <div className="container">
         <header>
           <div className="wrapper">
@@ -35,21 +35,4 @@ function App() {
 
 export default App;
 
-const Wrapper = styled.div`
-  font-family: "Roboto";
-  margin: 40px;
-
-  display: grid;
-  row-gap: 20px;
-  justify-content: center;
-`;
-
-const TitleWrapper = styled.div`
-  * {
-    margin: 0;
-  }
-
-  display: grid;
-  row-gap: 10px;
-`;
 
