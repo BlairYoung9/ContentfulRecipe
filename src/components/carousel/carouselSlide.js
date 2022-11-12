@@ -7,7 +7,7 @@ const CarouselSlide = (props) => {
             <div className='textWrap'>
                 <h2>{slideTitle}</h2>
                 <p>{slideDescription}</p>
-                <a href='/recipes' className='btn'>Learn More</a>
+                <a href='/recipes' className='btn'>Example Recipe</a>
             </div>
         </div>
     )
