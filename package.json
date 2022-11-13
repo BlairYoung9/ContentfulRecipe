@@ -9,6 +9,7 @@
     "contentful": "^9.1.33",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
+    "minimatch": "^5.1.0",
     "node": "^18.7.0",
     "node-polyfill-webpack-plugin": "^2.0.1",
     "react": "^18.2.0",
@@ -22,7 +23,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "go": "node src/server.js", 
+    "go": "node src/server.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
